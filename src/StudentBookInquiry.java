@@ -8,6 +8,7 @@ import java.sql.SQLException;
 
 public class StudentBookInquiry extends JPanel {
     private Font bigFont = new Font("宋体", Font.BOLD, 40);
+    private Font smallFont = new Font("宋体", Font.BOLD, 20);
     private Font titleFont = new Font("宋体", Font.BOLD, 70);
     public StudentBookInquiry() {
         setLayout(null);
@@ -29,6 +30,37 @@ public class StudentBookInquiry extends JPanel {
         searchBtn.setFont(bigFont);
         searchJpanel.add(searchBtn);
         add(searchJpanel);
+
+        JPanel bidJpanel = new JPanel();
+        bidJpanel.setLayout(null);
+        bidJpanel.setBounds(0, 220, 1024,60);
+
+        JLabel bid = new JLabel("|书籍编号");
+        bid.setFont(smallFont);
+        bid.setBounds(137,0,150,60);
+        bidJpanel.add(bid);
+
+        JLabel bookName = new JLabel("|书籍名称");
+        bookName.setBounds(287,0,150,60);
+        bookName.setFont(smallFont);
+        bidJpanel.add(bookName);
+
+        JLabel author = new JLabel("|书籍作者");
+        author.setBounds(437,0,150,60);
+        author.setFont(smallFont);
+        bidJpanel.add(author);
+
+        JLabel press = new JLabel("|出版社名");
+        press.setBounds(587,0,150,60);
+        press.setFont(smallFont);
+        bidJpanel.add(press);
+
+        JLabel allowance = new JLabel("|书籍余量");
+        allowance.setBounds(737,0,150,60);
+        allowance.setFont(smallFont);
+        bidJpanel.add(allowance);
+
+        add(bidJpanel);
 
         DBUtils dbUtils = new DBUtils();
         dbUtils.getConnection();
