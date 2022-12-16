@@ -31,9 +31,10 @@ public class StudentBookInquiry extends JPanel {
         searchJpanel.add(searchBtn);
         add(searchJpanel);
 
+        //循环结束---------------------------------------------------
         JPanel bidJpanel = new JPanel();
         bidJpanel.setLayout(null);
-        bidJpanel.setBounds(0, 220, 1024,60);
+        bidJpanel.setBounds(0, 220, 1024,60); //这个高 循环要加上60
 
         JLabel bid = new JLabel("|书籍编号");
         bid.setFont(smallFont);
@@ -61,6 +62,7 @@ public class StudentBookInquiry extends JPanel {
         bidJpanel.add(allowance);
 
         add(bidJpanel);
+        //循环结束---------------------------------------------------
 
         DBUtils dbUtils = new DBUtils();
         dbUtils.getConnection();
