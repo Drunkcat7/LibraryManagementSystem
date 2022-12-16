@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.lang.reflect.Constructor;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,13 +19,22 @@ public class Client extends JFrame {
             public void mouseClicked(MouseEvent e) {
                 try {
                     @SuppressWarnings("deprecation")
-                    Object object = Class.forName(s).newInstance();//forName(String className)根据类名返回类的对象
+                    //登录传上下文
+                    Object object;
+                    if (s.equals("StudentAccountManagement")) {
+                        Constructor<?> declaredConstructor = Class.forName(s).getDeclaredConstructor(JFrame.class);
+
+                        object = declaredConstructor.newInstance(frame);
+                    } else {
+                        object = Class.forName(s).newInstance();//forName(String className)根据类名返回类的对象
+
+                    }
                     frame.getContentPane().removeAll();
                     frame.add((Component) object);
                     frame.revalidate();
                     frame.repaint();
-                } catch (InstantiationException | IllegalAccessException | ClassNotFoundException e1) {
-                    e1.printStackTrace();
+                } catch (Exception exception) {
+                    exception.printStackTrace();
                 }
             }
         });
@@ -53,15 +63,15 @@ public class Client extends JFrame {
     public void getSerial() {
         //0=空；1=管理员；2=普通用户
         if (LibraryManagement.userLevel == 2) {
-            serial.add(new MenuData("主界面","Welcome"));
-            serial.add(new MenuData("图书查询","StudentBookInquiry"));
-            serial.add(new MenuData("图书借还","StudentBooksBorrowed"));
-            serial.add(new MenuData("账号管理","StudentAccountManagement"));
+            serial.add(new MenuData("主界面", "Welcome"));
+            serial.add(new MenuData("图书查询", "StudentBookInquiry"));
+            serial.add(new MenuData("图书借还", "StudentBooksBorrowed"));
+            serial.add(new MenuData("账号管理", "StudentAccountManagement"));
         } else if (LibraryManagement.userLevel == 1) {
-            serial.add(new MenuData("借书记录","AdminBorrowBooksRecord"));
-            serial.add(new MenuData("图书新增","AdminBookInsert"));
-            serial.add(new MenuData("图书删改","AdminBookRevised"));
-            serial.add(new MenuData("账户管理","AdminAccountManagement"));
+            serial.add(new MenuData("借书记录", "AdminBorrowBooksRecord"));
+            serial.add(new MenuData("图书新增", "AdminBookInsert"));
+            serial.add(new MenuData("图书删改", "AdminBookRevised"));
+            serial.add(new MenuData("账户管理", "AdminAccountManagement"));
         }
     }
 }

@@ -64,6 +64,8 @@ public class StudentBookInquiry extends JPanel {
         add(bidJpanel);
         //循环结束---------------------------------------------------
 
+
+
         DBUtils dbUtils = new DBUtils();
         dbUtils.getConnection();
         searchBtn.addActionListener(e -> {
