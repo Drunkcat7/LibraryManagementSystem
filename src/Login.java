@@ -18,9 +18,10 @@ public class Login extends JFrame {
         setSize(WIDTH, HEIGHT);
         setLocationRelativeTo(null);
         setLayout(null);
+        dispose();
+        new Client();
 
-
-        JLabel title = new JLabel("图书管理系统", JLabel.CENTER);
+    /*    JLabel title = new JLabel("图书管理系统", JLabel.CENTER);
         title.setFont(new Font("宋体", Font.BOLD, 26));
         title.setBounds(0, 30, WIDTH, 50);
 
@@ -135,7 +136,7 @@ public class Login extends JFrame {
                 LibraryManagement.userLevel = 0;
                 throw new RuntimeException(ex);
             }
-        });
+        });*/
 
     }
 }
