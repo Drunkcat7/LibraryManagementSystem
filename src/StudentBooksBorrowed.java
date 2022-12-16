@@ -54,9 +54,22 @@ public class StudentBooksBorrowed extends JPanel {
         bookNameJpanel.add(bookName);
         add(bookNameJpanel);
 
+        JPanel authorJpanel = new JPanel();
+        authorJpanel.setLayout(null);
+        authorJpanel.setBounds(0, 380, 1024,60);
+        JLabel authorJLabel = new JLabel("作者：");
+        authorJLabel.setFont(bigFont);
+        authorJLabel.setBounds(137,0,1024,60);
+        authorJpanel.add(authorJLabel);
+        JLabel author = new JLabel("小明");
+        author.setBounds(237,0,1024,60);
+        author.setFont(bigFont);
+        authorJpanel.add(author);
+        add(authorJpanel);
+
         JPanel pressJpanel = new JPanel();
         pressJpanel.setLayout(null);
-        pressJpanel.setBounds(0, 380, 1024,60);
+        pressJpanel.setBounds(0, 460, 1024,60);
         JLabel pressJLabel = new JLabel("出版：");
         pressJLabel.setFont(bigFont);
         pressJLabel.setBounds(137,0,1024,60);
@@ -69,7 +82,7 @@ public class StudentBooksBorrowed extends JPanel {
 
         JPanel allowanceJpanel = new JPanel();
         allowanceJpanel.setLayout(null);
-        allowanceJpanel.setBounds(0, 460, 1024,60);
+        allowanceJpanel.setBounds(0, 540, 1024,60);
         JLabel allowanceJLabel = new JLabel("余量：");
         allowanceJLabel.setFont(bigFont);
         allowanceJLabel.setBounds(137,0,1024,60);
@@ -82,7 +95,7 @@ public class StudentBooksBorrowed extends JPanel {
 
         JPanel btnJpanel = new JPanel();
         btnJpanel.setLayout(null);
-        btnJpanel.setBounds(0, 540, 1024,60);
+        btnJpanel.setBounds(0, 620, 1024,60);
         JButton returnBookBtn = new JButton("还书");
         returnBookBtn.setFont(bigFont);
         returnBookBtn.setBounds(137,0,200,60);
