@@ -6,7 +6,7 @@ public class DBUtils {
     static final String DB_URL = "jdbc:mysql://localhost:3306/LibraryManagementSystem?&useSSL=false&serverTimezone=Asia/Shanghai";
     // 数据库的用户名与密码，需要根据自己的设置
     static final String USER = "root";
-    static final String PASS = "jet";
+    static final String PASS = "12345678";
     Connection connection = null;
     Statement statement = null;
 
