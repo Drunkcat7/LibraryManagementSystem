@@ -21,7 +21,7 @@ public class Client extends JFrame {
                     @SuppressWarnings("deprecation")
                     //登录传上下文
                     Object object;
-                    if (s.equals("StudentAccountManagement")) {
+                    if (s.equals("StudentAccountManagement")||s.equals("StudentBookInquiry")) {
                         Constructor<?> declaredConstructor = Class.forName(s).getDeclaredConstructor(JFrame.class);
 
                         object = declaredConstructor.newInstance(frame);
